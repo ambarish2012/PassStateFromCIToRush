@@ -11,6 +11,6 @@ jobs:
       - IN: job_1
       - TASK:
         - script: HERO="$(shipctl get_resource_version_key job_1 HERO)" && echo $HERO
-        - script: FOO="$(shipctl get_resource_version_key job_1 HERO)" && echo $FOO
+        - script: FOO="$(shipctl get_resource_version_key job_1 FOO)" && echo $FOO
         
          
