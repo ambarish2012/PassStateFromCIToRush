@@ -1,0 +1,16 @@
+jobs:
+  - name: job_1
+    type: runSh
+    steps:
+      - TASK:
+        - script: shipctl post_resource_state_multi $JOB_NAME "HERO=SUPERMAN FOO=bar"
+          
+  - name: job_2
+    type: runSh
+    steps:
+      - IN: job_1
+      - TASK:
+        - script: HERO="$(shipctl get_resource_version_key job_1 HERO)" && echo HERO
+        - script: FOO="$(shipctl get_resource_version_key job_1 HERO)" && echo FOO
+        
+         
