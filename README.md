@@ -1,0 +1,1 @@
+# pass-state-from-ci-rush-example
